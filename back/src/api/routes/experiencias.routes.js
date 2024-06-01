@@ -1,5 +1,5 @@
 const express = require("express");
 
-const librosRouter = express.Router();
+const experienciasRouter = express.Router();
 
-module.exports = librosRouter;
+module.exports = experienciasRouter;

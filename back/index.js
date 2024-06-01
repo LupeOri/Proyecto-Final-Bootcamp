@@ -3,12 +3,16 @@ const { connect } = require("./src/utils/db");
 const dotenv = require("dotenv");
 dotenv.config();
 
+const experienciasRouter = require("./src/api/routes/experiencias.routes");
+
 const PORT = process.env.PORT;
 
 const app = express();
 // connect();
 
-app.use("/experiencias", (req, res) => {
+app.use("/experiencias", experienciasRouter);
+
+app.use("/", (req, res) => {
   res.json("Esto es el endpoint de experiencias");
 });
 
