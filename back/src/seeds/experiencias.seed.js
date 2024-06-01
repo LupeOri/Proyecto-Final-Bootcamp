@@ -127,14 +127,22 @@ const arrayExperiencias = [
   },
 ];
 
-mongoose.connect(DB_URL).then(async () => {
-  const allExperiencias = await Experiencia;.find()
-  if (allExperiencias.length > 0 ){
-    await Experiencia.collection.drop();
-    console.log("Experiencias borradas")
-  }
-}).catch((error)=>console.log("error borrando experiencias", error)).then(async()=>{
-    const experienciaMap = arrayExperiencias.map((experiencia)=> new Experiencia(experiencia));
+mongoose
+  .connect(DB_URL)
+  .then(async () => {
+    const allExperiencias = await Experiencia.find();
+    if (allExperiencias.length > 0) {
+      await Experiencia.collection.drop();
+      console.log("Experiencias borradas");
+    }
+  })
+  .catch((error) => console.log("error borrando experiencias", error))
+  .then(async () => {
+    const experienciaMap = arrayExperiencias.map(
+      (experiencia) => new Experiencia(experiencia)
+    );
     await Experiencia.insertMany(experienciaMap);
     console.log("Experiencias creadas");
-}).catch((error)=>console.log("error insertando experiencias", error)).finally(()=>mongoose.disconnect());
+  })
+  .catch((error) => console.log("error insertando experiencias", error))
+  .finally(() => mongoose.disconnect());
