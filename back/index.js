@@ -10,6 +10,8 @@ const PORT = process.env.PORT;
 const app = express();
 connect();
 
+app.use(express.json());
+
 app.use("/experiencias", experienciasRouter);
 
 app.use("/", (req, res) => {

@@ -10,12 +10,20 @@ const experienciaSchema = new Schema({
   categoria: {
     type: String,
     default: "otras categorias",
-    enum: ["cena", "tour", "clases", "cocktails", "fiesta", "otras categorias"],
+    enum: ["cena", "cata", "tour", "clases", "fiesta", "otras categorias"],
     require: true,
   }, //cena, tour, clases, etc
   anfitrion: { type: String, require: true },
   valoraciones: { type: String, require: true }, //relacion con usuario
-  imagenes: { type: String, require: true }, //relacion con valoracion
+  imagenes: { type: String, require: false }, //relacion con valoracion
+});
+
+// Middleware para convertir categoria a minúsculas antes de la validación
+experienciaSchema.pre("validate", function (next) {
+  if (this.categoria) {
+    this.categoria = this.categoria.toLowerCase();
+  }
+  next();
 });
 
 const Experiencia = mongoose.model("experiencia", experienciaSchema);

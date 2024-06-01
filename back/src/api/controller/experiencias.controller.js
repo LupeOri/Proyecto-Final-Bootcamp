@@ -8,4 +8,15 @@ const getExperiencias = async (req, res) => {
   }
 };
 
-module.exports = { getExperiencias };
+const postExperiencia = async (req, res) => {
+  try {
+    const newExperiencia = new Experiencia(req.body);
+    const createdExperiencia = await newExperiencia.save();
+
+    return res.status(201).json(createdExperiencia);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
+module.exports = { getExperiencias, postExperiencia };
