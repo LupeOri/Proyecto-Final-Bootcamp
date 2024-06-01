@@ -12,6 +12,10 @@ connect();
 
 app.use("/experiencias", experienciasRouter);
 
+app.use("/", (req, res) => {
+  res.json("Este es el home");
+});
+
 app.listen(PORT, () =>
   console.log(`Escuchando en el puerto http://localhost:${PORT}`)
 );
