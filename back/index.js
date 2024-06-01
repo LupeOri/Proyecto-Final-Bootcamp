@@ -8,17 +8,9 @@ const experienciasRouter = require("./src/api/routes/experiencias.routes");
 const PORT = process.env.PORT;
 
 const app = express();
-// connect();
+connect();
 
 app.use("/experiencias", experienciasRouter);
-
-app.use("/", (req, res) => {
-  res.json("Esto es el endpoint de experiencias");
-});
-
-app.use("/", (req, res) => {
-  res.json("Esto es el home");
-});
 
 app.listen(PORT, () =>
   console.log(`Escuchando en el puerto http://localhost:${PORT}`)
