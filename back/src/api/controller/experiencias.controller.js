@@ -19,4 +19,20 @@ const postExperiencia = async (req, res) => {
   }
 };
 
-module.exports = { getExperiencias, postExperiencia };
+const putExperiencia = async (req, res) => {
+  // console.log(req.params);
+  try {
+    const { id } = req.params;
+    const putExperiencia = new Experiencia(req.body);
+    putExperiencia._id = id;
+    const updatedExperiencia = await Experiencia.findByIdAndUpdate(
+      id,
+      putExperiencia
+    );
+    return res.status(200).json(updatedExperiencia);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
+module.exports = { getExperiencias, postExperiencia, putExperiencia };

@@ -34,7 +34,7 @@ const arrayExperiencias = [
     descripcion:
       "Recorre los lugares históricos más emblemáticos del centro de la ciudad.",
     ubicacion: "Madrid, España",
-    precio: "40 USD",
+    precio: "40 EUR",
     duracion: "4 horas",
     categoria: "tour",
     anfitrion: "Guía Juan Pérez",
@@ -82,7 +82,7 @@ const arrayExperiencias = [
     descripcion:
       "Exprésate artísticamente en una clase de pintura en un parque hermoso.",
     ubicacion: "Barcelona, España",
-    precio: "60 USD",
+    precio: "60 EUR",
     duracion: "3 horas",
     categoria: "clases",
     anfitrion: "Artista Sofía Hernández",
@@ -94,7 +94,7 @@ const arrayExperiencias = [
     descripcion:
       "Descubre y degusta una variedad de cervezas artesanales locales.",
     ubicacion: "Bruselas, Bélgica",
-    precio: "55 USD",
+    precio: "55 EUR",
     duracion: "2 horas",
     categoria: "cata",
     anfitrion: "Maestro Cervecero Tomás Verhoeven",
@@ -106,7 +106,7 @@ const arrayExperiencias = [
     descripcion:
       "Conoce la ciudad de una manera diferente con un tour guiado en bicicleta.",
     ubicacion: "Ámsterdam, Países Bajos",
-    precio: "30 USD",
+    precio: "30 EUR",
     duracion: "3 horas",
     categoria: "tour",
     anfitrion: "Guía Emma Jansen",
