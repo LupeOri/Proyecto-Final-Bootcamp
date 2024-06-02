@@ -29,6 +29,9 @@ const putExperiencia = async (req, res) => {
       id,
       putExperiencia
     );
+    if (!updatedExperiencia) {
+      return res.status(404).json({ message: "el id de este libro no existe" });
+    }
     return res.status(200).json(updatedExperiencia);
   } catch (error) {
     return res.status(500).json(error);
