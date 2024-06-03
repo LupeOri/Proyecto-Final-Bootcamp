@@ -1,8 +1,25 @@
 const Reserva = require("../model/reservas.model");
 const getReservas = async (req, res) => {
   try {
-    const allReservas = await Reserva.find();
+    // const allReservas = await Reserva.find().populate("experiencias");
+    const allReservas = await Reserva.find().populate(
+      "experiencias",
+      "experiencia fecha estado total"
+    ); // Hemos comentado la linea anterior para que no pinte toda la información (por ejemplo el "__v"). En esta linea, después del populate("experiencias"), le estamos diciendo que nos pinte los campos "experiencia fecha estado total". Esto se escribe sin coma).
     return res.status(200).json(allReservas);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
+const getReservaById = async (req, res) => {
+  try {
+    const { id } = req.params; // El uso de const {id} es igual a const id = req.params.id
+    const reserva = await Reserva.findById(id).populate(
+      "experiencias",
+      "experiencia fecha estado total"
+    );
+    return res.status(200).json(reserva);
   } catch (error) {
     return res.status(500).json(error);
   }
@@ -11,7 +28,9 @@ const getReservas = async (req, res) => {
 const postReserva = async (req, res) => {
   try {
     const newReserva = new Reserva(req.body);
-    const createdReserva = await newReserva.save();
+    const createdReserva = await newReserva
+      .save()
+      .populate("experiencias", "experiencia fecha estado total");
 
     return res.status(201).json(createdReserva);
   } catch (error) {
@@ -25,7 +44,10 @@ const putReserva = async (req, res) => {
     const { id } = req.params;
     const putReserva = new Reserva(req.body);
     putReserva._id = id;
-    const updatedReserva = await Reserva.findByIdAndUpdate(id, putReserva);
+    const updatedReserva = await Reserva.findByIdAndUpdate(
+      id,
+      putReserva
+    ).populate("experiencias", "experiencia fecha estado total");
     if (!updatedReserva) {
       return res
         .status(404)
@@ -40,7 +62,10 @@ const putReserva = async (req, res) => {
 const deleteReserva = async (req, res) => {
   try {
     const { id } = req.params;
-    const deletedReserva = await Reserva.findByIdAndDelete(id);
+    const deletedReserva = await Reserva.findByIdAndDelete(id).populate(
+      "experiencias",
+      "experiencia fecha estado total"
+    );
     if (!deletedReserva) {
       return res
         .status(404)
@@ -54,6 +79,7 @@ const deleteReserva = async (req, res) => {
 
 module.exports = {
   getReservas,
+  getReservaById,
   postReserva,
   putReserva,
   deleteReserva,

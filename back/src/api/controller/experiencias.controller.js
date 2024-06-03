@@ -8,6 +8,16 @@ const getExperiencias = async (req, res) => {
   }
 };
 
+const getExperienciaById = async (req, res) => {
+  try {
+    const { id } = req.params; // El uso de const {id} es igual a const id = req.params.id
+    const experiencia = await Experiencia.findById(id);
+    return res.status(200).json(experiencia);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
 const postExperiencia = async (req, res) => {
   try {
     const newExperiencia = new Experiencia(req.body);
@@ -57,6 +67,7 @@ const deleteExperiencia = async (req, res) => {
 
 module.exports = {
   getExperiencias,
+  getExperienciaById,
   postExperiencia,
   putExperiencia,
   deleteExperiencia,

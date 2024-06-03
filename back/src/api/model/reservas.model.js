@@ -19,6 +19,8 @@ const reservaSchema = new Schema({
   total: { type: Number, required: true },
 });
 
+// Faltaría el timestamps?
+
 const Reserva = mongoose.model("reserva", reservaSchema);
 
 module.exports = Reserva;
