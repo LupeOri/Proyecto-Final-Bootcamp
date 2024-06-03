@@ -30,7 +30,9 @@ const putExperiencia = async (req, res) => {
       putExperiencia
     );
     if (!updatedExperiencia) {
-      return res.status(404).json({ message: "el id de este libro no existe" });
+      return res
+        .status(404)
+        .json({ message: "el id de esta experiencia no existe" });
     }
     return res.status(200).json(updatedExperiencia);
   } catch (error) {
@@ -38,4 +40,24 @@ const putExperiencia = async (req, res) => {
   }
 };
 
-module.exports = { getExperiencias, postExperiencia, putExperiencia };
+const deleteExperiencia = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedExperiencia = await Experiencia.findByIdAndDelete(id);
+    if (!deletedExperiencia) {
+      return res
+        .status(404)
+        .json({ message: "el id de esta experiencia no existe" });
+    }
+    return res.status(200).json(deletedExperiencia);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
+module.exports = {
+  getExperiencias,
+  postExperiencia,
+  putExperiencia,
+  deleteExperiencia,
+};

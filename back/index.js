@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const experienciasRouter = require("./src/api/routes/experiencias.routes");
+const reservasRouter = require("./src/api/routes/reservas.routes");
 
 const PORT = process.env.PORT;
 
@@ -13,6 +14,7 @@ connect();
 app.use(express.json());
 
 app.use("/experiencias", experienciasRouter);
+app.use("/reservas", reservasRouter);
 
 app.use("/", (req, res) => {
   res.json("Este es el home");
