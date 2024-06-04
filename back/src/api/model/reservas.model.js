@@ -1,14 +1,16 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const reservaSchema = new Schema({
-  experiencias: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "experiencia",
-      required: true,
-    },
-  ],
-  invitadoId: { type: Number, required: true }, //relacionada con usuario, cuando ya este creado debemos modificar esto y que quede como el de ExperienciaId
+  experiencia: {
+    type: Schema.Types.ObjectId,
+    ref: "experiencia",
+    required: true,
+  },
+  usuario: {
+    type: Schema.Types.ObjectId,
+    ref: "usuario",
+    required: true,
+  },
   fecha: { type: String, required: true },
   estado: {
     type: String,
