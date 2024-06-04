@@ -9,6 +9,8 @@ const {
 
 const experienciasRouter = require("./src/api/routes/experiencias.routes");
 const reservasRouter = require("./src/api/routes/reservas.routes");
+const valoracionesRouter = require("./src/api/routes/valoraciones.routes");
+const userRouter = require("./src/api/routes/users.routes");
 
 const PORT = process.env.PORT;
 
@@ -19,6 +21,8 @@ app.use(express.json());
 
 app.use("/experiencias", experienciasRouter);
 app.use("/reservas", reservasRouter);
+app.use("/valoraciones", valoracionesRouter);
+app.use("/users", userRouter);
 
 app.use("/", (req, res) => {
   res.json("Este es el home");

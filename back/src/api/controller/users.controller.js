@@ -1,4 +1,4 @@
-const User = require("./user.model");
+const User = require("../model/users.model");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -62,4 +62,23 @@ const logout = (req, res, next) => {
   }
 };
 
-module.exports = { register, login, logout };
+const myReservas = async (req, res) => {
+  try {
+    // const allReservas = await Reserva.find().populate("experiencias");
+    const allReservas = await Reserva.find().populate("reservas");
+    return res.status(200).json(allReservas);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
+const myValoraciones = async (req, res) => {
+  try {
+    const allValoraciones = await Reserva.find().populate("valoraciones");
+    return res.status(200).json(allValoraciones);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+};
+
+module.exports = { register, login, logout, myValoraciones, myReservas };
