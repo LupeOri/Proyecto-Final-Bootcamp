@@ -13,9 +13,9 @@ const experienciaSchema = new Schema({
     enum: ["cena", "cata", "tour", "clases", "fiesta", "otras categorias"],
     require: true,
   }, //cena, tour, clases, etc
-  anfitrion: { type: String, require: true },
-  valoraciones: { type: String, require: true }, //relacion con usuario
-  imagenes: { type: String, require: false }, //relacion con valoracion
+  anfitrion: { type: String, require: true }, //relacion con usuario
+  valoraciones: { type: String, require: true }, //relacion con valoracion
+  imagenes: { type: String, require: false },
 });
 
 // Middleware para convertir categoria a minúsculas antes de la validación
