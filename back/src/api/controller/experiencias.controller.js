@@ -1,7 +1,9 @@
 const Experiencia = require("../model/experiencias.model");
 const getExperiencias = async (req, res) => {
   try {
-    const allExperiencias = await Experiencia.find();
+    const allExperiencias = await Experiencia.find()
+      .populate("usuario")
+      .populate("valoraciones");
     return res.status(200).json(allExperiencias);
   } catch (error) {
     return res.status(500).json(error);
@@ -11,7 +13,9 @@ const getExperiencias = async (req, res) => {
 const getExperienciaById = async (req, res) => {
   try {
     const { id } = req.params; // El uso de const {id} es igual a const id = req.params.id
-    const experiencia = await Experiencia.findById(id);
+    const experiencia = await Experiencia.findById(id)
+      .populate("usuario")
+      .populate("valoraciones");
     return res.status(200).json(experiencia);
   } catch (error) {
     return res.status(500).json(error);
@@ -22,6 +26,7 @@ const postExperiencia = async (req, res) => {
   try {
     const newExperiencia = new Experiencia(req.body);
     const createdExperiencia = await newExperiencia.save();
+    // .populate("usuario");
 
     return res.status(201).json(createdExperiencia);
   } catch (error) {
@@ -39,6 +44,7 @@ const putExperiencia = async (req, res) => {
       id,
       putExperiencia
     );
+    // .populate("usuario");
     if (!updatedExperiencia) {
       return res
         .status(404)
