@@ -18,7 +18,7 @@ const reservaSchema = new Schema({
     enum: ["confirmada", "pendiente", "cancelada", "a confirmar"],
     required: true,
   },
-  total: { type: Number, required: true },
+  total: { type: Number, required: false }, // Cambie a false para hacer prueba
 });
 
 // Faltaría el timestamps?
