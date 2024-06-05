@@ -64,10 +64,13 @@ const logout = (req, res, next) => {
 
 const myReservas = async (req, res) => {
   try {
+    const userId = req.query.id;
     // const allReservas = await Reserva.find().populate("experiencias");
-    const allReservas = await Reserva.find().populate("reservas");
+    const allReservas = await User.findById(userId).populate("reservas");
+    console.log(userId);
     return res.status(200).json(allReservas);
   } catch (error) {
+    console.log(error);
     return res.status(500).json(error);
   }
 };

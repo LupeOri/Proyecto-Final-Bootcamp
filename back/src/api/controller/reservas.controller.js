@@ -2,9 +2,11 @@ const Reserva = require("../model/reservas.model");
 const getReservas = async (req, res) => {
   try {
     // const allReservas = await Reserva.find().populate("experiencias");
-    const allReservas = await Reserva.find()
-      .populate("experiencia", "experiencia fecha estado total")
-       // Hemos comentado la linea anterior para que no pinte toda la información (por ejemplo el "__v"). En esta linea, después del populate("experiencias"), le estamos diciendo que nos pinte los campos "experiencia fecha estado total". Esto se escribe sin coma).
+    const allReservas = await Reserva.find().populate(
+      "experiencia",
+      "experiencia fecha estado total"
+    );
+    // Hemos comentado la linea anterior para que no pinte toda la información (por ejemplo el "__v"). En esta linea, después del populate("experiencias"), le estamos diciendo que nos pinte los campos "experiencia fecha estado total". Esto se escribe sin coma).
     return res.status(200).json(allReservas);
   } catch (error) {
     return res.status(500).json(error);
@@ -14,8 +16,10 @@ const getReservas = async (req, res) => {
 const getReservaById = async (req, res) => {
   try {
     const { id } = req.params; // El uso de const {id} es igual a const id = req.params.id
-    const reserva = await Reserva.findById(id)
-      .populate("experiencia", "experiencia fecha estado total")
+    const reserva = await Reserva.findById(id).populate(
+      "experiencia",
+      "experiencia fecha estado total"
+    );
     return res.status(200).json(reserva);
   } catch (error) {
     return res.status(500).json(error);
@@ -24,10 +28,10 @@ const getReservaById = async (req, res) => {
 
 const postReserva = async (req, res) => {
   try {
+    console.log(req.body);
     const newReserva = new Reserva(req.body);
-    const createdReserva = await newReserva
-      .save()
-      .populate("experiencia", "experiencia fecha estado total")
+    const createdReserva = await newReserva.save();
+    // .populate("experiencia", "experiencia fecha estado total");
 
     return res.status(201).json(createdReserva);
   } catch (error) {
