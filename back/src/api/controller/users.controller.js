@@ -66,7 +66,9 @@ const myReservas = async (req, res) => {
   try {
     const userId = req.query.id;
     // const allReservas = await Reserva.find().populate("experiencias");
-    const allReservas = await User.findById(userId).populate("reservas");
+    const allReservas = await User.findById(userId)
+      .populate("reservas")
+      .populate("reservas.experiencia", "experiencia fecha estado total");
     console.log(userId);
     return res.status(200).json(allReservas);
   } catch (error) {
@@ -77,7 +79,7 @@ const myReservas = async (req, res) => {
 
 const myValoraciones = async (req, res) => {
   try {
-    const allValoraciones = await Reserva.find().populate("valoraciones");
+    const allValoraciones = await User.find().populate("valoraciones");
     return res.status(200).json(allValoraciones);
   } catch (error) {
     return res.status(500).json(error);

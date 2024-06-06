@@ -8,11 +8,12 @@ const {
 } = require("../controller/reservas.controller");
 
 const reservasRouter = express.Router();
+const { isAuth } = require("../middleware/auth.middleware");
 
-reservasRouter.get("/", getReservas);
-reservasRouter.get("/:id", getReservaById);
-reservasRouter.post("/", postReserva);
-reservasRouter.put("/:id", putReserva);
-reservasRouter.delete("/:id", deleteReserva);
+reservasRouter.get("/", [isAuth], getReservas);
+reservasRouter.get("/:id", [isAuth], getReservaById);
+reservasRouter.post("/", [isAuth], postReserva);
+reservasRouter.put("/:id", [isAuth], putReserva);
+reservasRouter.delete("/:id", [isAuth], deleteReserva);
 
 module.exports = reservasRouter;
