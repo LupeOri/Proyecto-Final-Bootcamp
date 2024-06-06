@@ -6,9 +6,9 @@ const {
   putReserva,
   deleteReserva,
 } = require("../controller/reservas.controller");
+const { isAuth } = require("../middleware/auth.middleware");
 
 const reservasRouter = express.Router();
-const { isAuth } = require("../middleware/auth.middleware");
 
 reservasRouter.get("/", [isAuth], getReservas);
 reservasRouter.get("/:id", [isAuth], getReservaById);
