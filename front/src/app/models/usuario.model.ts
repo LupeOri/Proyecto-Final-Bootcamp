@@ -3,7 +3,7 @@ export interface Usuario {
     tipo: 'invitado' | 'anfitrion';
     nombre: string;
     email: string;
-    password?: string;
+    password: string;
     imagen?: string;
     biografia?: string;
     valoraciones?: Valoracion[];
