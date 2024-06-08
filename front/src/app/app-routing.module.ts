@@ -15,6 +15,9 @@ const routes: Routes = [
 path: "experiencias/:id", component: ExperienceDetailComponent
 },
 // {
+// path: "experiencias/:id", component: ExperienceDetailComponent
+// },
+// {
 //   path: "contact", component:
 // },
 // {
