@@ -1,4 +1,12 @@
 const express = require("express");
+const cors = require("cors");
+
+// Inicializar la aplicación Express
+const app = express();
+
+// Configurar CORS
+app.use(cors());
+
 const { connect } = require("./src/utils/db");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -14,7 +22,7 @@ const userRouter = require("./src/api/routes/users.routes");
 
 const PORT = process.env.PORT;
 
-const app = express();
+// Conectar a la base de datos
 connect();
 
 app.use(express.json());

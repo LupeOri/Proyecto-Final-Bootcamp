@@ -1,1 +1,14 @@
-<p>experiencias works!</p>
+<div *ngFor="let experiencia of experienciaList" class="experiencia-card">
+    <img [src]="experiencia.imagen" [alt]="experiencia.titulo" class="experiencia-imagen" />
+    <div class="experiencia-details">
+      <h2 class="experiencia-titulo">{{ experiencia.titulo }}</h2>
+      <p class="experiencia-description">{{ experiencia.descripcion }}</p>
+      <div class="card-footer">
+        <p class="precio">{{ experiencia.precio | currency : "USD" : "symbol" }}</p>
+        <div class="stars">
+          <p>Duracion: {{ experiencia.duracion }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+

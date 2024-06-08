@@ -13,4 +13,9 @@ export class LocalLeisureService {
       return this.http.get(`${this.baseUrl}experiencias`);
 
   }
+
+  getExperienciasById(id: string){
+    return this.http.get(`${this.baseUrl}experiencias/${id}`)
+   
+  }
 }

@@ -1,3 +1,7 @@
+import { Reserva } from './reserva.model';
+import { Valoracion } from './valoracion.model';
+
+
 export interface Usuario {
     id: string;
     tipo: 'invitado' | 'anfitrion';

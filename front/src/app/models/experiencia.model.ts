@@ -1,3 +1,6 @@
+import { Usuario } from './usuario.model';
+import { Valoracion } from './valoracion.model';
+
 export interface Experiencia {
     id: string;
     titulo: string;
@@ -8,5 +11,5 @@ export interface Experiencia {
     categoria: 'cena' | 'cata' | 'tour' | 'clases' | 'fiesta' | 'otras categorias';
     usuario: Usuario;
     valoraciones: Valoracion[];
-    imagenes?: string[];
+    imagen?: string;
   }
