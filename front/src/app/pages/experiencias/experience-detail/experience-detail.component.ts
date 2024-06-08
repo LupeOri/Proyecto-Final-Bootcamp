@@ -1,4 +1,7 @@
+import { Experiencia } from 'src/app/models/experiencia.model';
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LocalLeisureService } from 'src/app/services/local-leisure.service';
 
 @Component({
   selector: 'app-experience-detail',
@@ -6,5 +9,29 @@ import { Component } from '@angular/core';
   styleUrls: ['./experience-detail.component.css']
 })
 export class ExperienceDetailComponent {
+  id!: string;
+  experiencia!: Experiencia;
+
+  constructor(
+    private servicio: LocalLeisureService,
+    private rutaActivada: ActivatedRoute,
+    private router: Router
+  ) {}
+
+  ngOnInit() {
+    this.rutaActivada.params.subscribe((params) => {
+      this.id = params['id'];
+    });
+    this.servicio.getExperienciasById(this.id).subscribe((data: any) => {
+      console.log(data);
+      
+      this.experiencia = data;
+    });
+  }
+    
+
+  
+
+
 
 }
