@@ -4,6 +4,7 @@ const getExperiencias = async (req, res) => {
     const allExperiencias = await Experiencia.find()
       .populate("usuario")
       .populate("valoraciones");
+    console.log(allExperiencias[0]._id);
     return res.status(200).json(allExperiencias);
   } catch (error) {
     return res.status(500).json(error);

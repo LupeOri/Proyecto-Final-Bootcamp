@@ -2,7 +2,7 @@ import { Usuario } from './usuario.model';
 import { Valoracion } from './valoracion.model';
 
 export interface Experiencia {
-    id: string;
+    _id: string;
     titulo: string;
     descripcion: string;
     ubicacion: string;
@@ -11,5 +11,5 @@ export interface Experiencia {
     categoria: 'cena' | 'cata' | 'tour' | 'clases' | 'fiesta' | 'otras categorias';
     usuario: Usuario;
     valoraciones: Valoracion[];
-    imagen?: string;
+    imagenes?: string;
   }
