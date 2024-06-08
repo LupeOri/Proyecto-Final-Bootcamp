@@ -1,0 +1,67 @@
+.experiencia-card {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .experiencia-imagen {
+    width: 200px; /* Ajustar el tamaño según sea necesario */
+    height: auto;
+  }
+  
+  .experiencia-details {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .experiencia-titulo {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .experiencia-ubicacion {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .experiencia-description {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .stars {
+    color: gold;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  

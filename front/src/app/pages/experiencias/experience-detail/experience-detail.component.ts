@@ -38,4 +38,8 @@ export class ExperienceDetailComponent implements OnInit {
       }
     });
   }
+
+  goBack() {
+    this.router.navigate(['/experiencias']);
+  }
 }

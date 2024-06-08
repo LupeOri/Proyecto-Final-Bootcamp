@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 
 // Inicializar la aplicación Express
 const app = express();
@@ -24,6 +25,8 @@ const PORT = process.env.PORT;
 
 // Conectar a la base de datos
 connect();
+
+app.use("/images", express.static(path.join(__dirname, "public/images")));
 
 app.use(express.json());
 
