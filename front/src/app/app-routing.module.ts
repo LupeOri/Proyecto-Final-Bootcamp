@@ -10,12 +10,12 @@ const routes: Routes = [
 {
   path: "experiencias", component: ExperienciasComponent
 },
-{
-  path: "contact", component:
-},
-{
-  path: "404", component:
-},
+// {
+//   path: "contact", component:
+// },
+// {
+//   path: "404", component:
+// },
 {
   path: "**", redirectTo: ""
 }
