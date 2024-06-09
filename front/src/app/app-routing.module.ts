@@ -5,10 +5,15 @@ import { ExperienciasComponent } from './pages/experiencias/experiencias.compone
 import { ExperienceDetailComponent } from './pages/experiencias/experience-detail/experience-detail.component';
 import { RegisterComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ComoFuncionaComponent } from './pages/como-funciona/como-funciona.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 const routes: Routes = [
 {
   path: "", component: HomeComponent
+},
+{
+  path: "comofunciona", component: ComoFuncionaComponent
 },
 {
   path: "experiencias", component: ExperienciasComponent
@@ -17,14 +22,14 @@ const routes: Routes = [
 path: "experiencias/:id", component: ExperienceDetailComponent
 },
 {
+  path: "contacto", component: ContactoComponent
+},
+{
   path: "registro", component: RegisterComponent
 },
 {
   path: "login", component: LoginComponent
 },
-// {
-//   path: "contact", component:
-// },
 // {
 //   path: "404", component:
 // },

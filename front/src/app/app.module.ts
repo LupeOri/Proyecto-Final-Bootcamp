@@ -12,6 +12,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { ExperienceDetailComponent } from './pages/experiencias/experience-detail/experience-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/registro/registro.component';
+import { ComoFuncionaComponent } from './pages/como-funciona/como-funciona.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { RegisterComponent } from './pages/registro/registro.component';
     ExperienciasComponent,
     LoginComponent,
     RegisterComponent,
-    ExperienceDetailComponent
+    ExperienceDetailComponent,
+    ComoFuncionaComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
