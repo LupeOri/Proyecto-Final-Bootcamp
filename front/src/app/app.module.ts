@@ -9,9 +9,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { CarritoComponent } from './pages/carrito/carrito.component';
 import { ExperienciasComponent } from './pages/experiencias/experiencias.component';
 import { LoginComponent } from './pages/login/login.component';
-import { RegistroComponent } from './pages/registro/registro.component';
 import { ExperienceDetailComponent } from './pages/experiencias/experience-detail/experience-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './pages/registro/registro.component';
+
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CarritoComponent,
     ExperienciasComponent,
     LoginComponent,
-    RegistroComponent,
-    ExperienceDetailComponent,
+    RegisterComponent,
+    ExperienceDetailComponent
   ],
   imports: [
     BrowserModule,
