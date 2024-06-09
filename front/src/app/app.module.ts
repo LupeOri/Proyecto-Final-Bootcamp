@@ -11,6 +11,7 @@ import { ExperienciasComponent } from './pages/experiencias/experiencias.compone
 import { LoginComponent } from './pages/login/login.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { ExperienceDetailComponent } from './pages/experiencias/experience-detail/experience-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ExperienceDetailComponent } from './pages/experiencias/experience-detai
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule	
+    HttpClientModule,
+    ReactiveFormsModule	
   ],
   providers: [],
   bootstrap: [AppComponent]
