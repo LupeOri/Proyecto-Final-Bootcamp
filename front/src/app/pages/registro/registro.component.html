@@ -32,4 +32,6 @@
     <!-- <button type="submit" [disabled]="registerForm.invalid">Registrarse</button> -->
     <button type="submit">Registrarse</button>
   </form>
+  <div *ngIf="successRegister">Registro exitoso</div>
+  <div *ngIf="registerError">Error en el registro</div>
 </div>
