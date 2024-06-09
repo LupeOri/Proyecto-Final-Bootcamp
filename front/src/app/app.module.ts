@@ -22,7 +22,7 @@ import { ExperienceDetailComponent } from './pages/experiencias/experience-detai
     ExperienciasComponent,
     LoginComponent,
     RegistroComponent,
-    ExperienceDetailComponent
+    ExperienceDetailComponent,
   ],
   imports: [
     BrowserModule,
