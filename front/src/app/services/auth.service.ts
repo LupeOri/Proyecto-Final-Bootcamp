@@ -41,6 +41,7 @@ import { tap } from 'rxjs/operators';
 export class AuthService {
   public API_URL = environment.api_url;
   private tokenKey = 'token';
+  private roleKey = 'role';
 
   constructor(private http: HttpClient) {}
 
@@ -51,33 +52,40 @@ export class AuthService {
   login(userToLogin: any): Observable<any> {
     return this.http.post(`${this.API_URL}/users/login`, userToLogin).pipe(
       tap((response: any) => {
-        console.log('Respuesta del login:', response);  // Log para depuración
-        if (response && response.data && response.data.token) { // Ajuste aquí
-          this.setToken(response.data.token);
-          console.log('Token guardado:', response.data.token);  // Log para verificar almacenamiento
+        console.log('Respuesta del login:', response);
+        if (response && response.data) {
+          if (response.data.token && response.data.user && response.data.user.tipo) {
+            this.setToken(response.data.token);
+            this.setRole(response.data.user.tipo);
+            console.log('Token guardado:', response.data.token);
+            console.log('Rol guardado:', response.data.user.tipo);
+          } else {
+            console.error('No se encontró el token o el rol en la respuesta');
+          }
         } else {
-          console.error('No se encontró el token en la respuesta');
+          console.error('Respuesta de login no contiene "data"');
         }
       })
     );
   }
 
-  // isAuthenticate(): boolean {
-  //   return this.getToken() !== null;
-  // }
-
   isAuthenticate(): boolean {
-          const token = localStorage.getItem('token');
-          if (!token) {
-            return false
-          } else {
-            return true
-          }
-        }
+    const token = localStorage.getItem(this.tokenKey);
+    return !!token;
+  }
+
+  getUserRole(): 'invitado' | 'anfitrión' | null {
+    const role = localStorage.getItem(this.roleKey);
+    return role as 'invitado' | 'anfitrión' | null;
+  }
 
   private setToken(token: string): void {
     localStorage.setItem(this.tokenKey, token);
-    console.log('Token guardado en localStorage:', localStorage.getItem(this.tokenKey));  // Log para verificar almacenamiento
+    console.log('Token guardado en localStorage:', localStorage.getItem(this.tokenKey));
+  }
+
+  private setRole(role: string): void {
+    localStorage.setItem(this.roleKey, role);
   }
 
   private getToken(): string | null {
@@ -86,9 +94,14 @@ export class AuthService {
 
   logout(): void {
     this.removeToken();
+    this.removeRole();
   }
 
   private removeToken(): void {
     localStorage.removeItem(this.tokenKey);
+  }
+
+  private removeRole(): void {
+    localStorage.removeItem(this.roleKey);
   }
 }

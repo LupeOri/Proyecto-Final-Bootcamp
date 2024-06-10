@@ -16,6 +16,14 @@
     <a *ngIf="authService.isAuthenticate()" routerLink="/misreservas"
       >Mis Reservas</a
     >
+    <a
+      *ngIf="
+        authService.isAuthenticate() &&
+        authService.getUserRole() === 'anfitrión'
+      "
+      routerLink="/misexperiencias"
+      >Mis Experiencias</a
+    >
     <a *ngIf="authService.isAuthenticate()" (click)="logout()">Cerrar sesión</a>
   </div>
 </nav>

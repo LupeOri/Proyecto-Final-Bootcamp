@@ -105,7 +105,7 @@ export class LoginComponent {
         (response: any) => {
           this.successLogin = true;
           this.loginForm.reset();
-          console.log('Token guardado correctamente en localStorage');  // Log para depuración
+          console.log('Token y rol guardados correctamente en localStorage');
         },
         (error) => {
           console.log(error);
@@ -139,3 +139,4 @@ export class LoginComponent {
     });
   }
 }
+
