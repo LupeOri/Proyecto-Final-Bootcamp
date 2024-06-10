@@ -11,6 +11,10 @@ import { Component, OnInit } from '@angular/core';
 export class ExperienciasComponent implements OnInit {
 
   experienciaList: Experiencia[] = [];
+  ciudadFiltro: string = '';
+  temaFiltro: string = '';
+  precioMinFiltro: number = 0;
+  precioMaxFiltro: number = Infinity;
 
   constructor(private localLeisureService: LocalLeisureService){
 
@@ -20,7 +24,40 @@ export class ExperienciasComponent implements OnInit {
     this.localLeisureService.getExperiencias().subscribe((response: any)=>{
     this.experienciaList = response
    this.experienciaList.push()
-    })
+    },
+    error => {
+      console.error('Error al obtener las experiencias:', error);
+    }
+  );
       }
 
+  aplicarFiltros() {
+    // Filtrar por ciudad
+    if (this.ciudadFiltro) {
+      this.experienciaList = this.experienciaList.filter(experiencia =>
+        experiencia.ubicacion.includes(this.ciudadFiltro)
+      );
+    }
+
+    // Filtrar por tema
+    if (this.temaFiltro) {
+      this.experienciaList = this.experienciaList.filter(experiencia =>
+        experiencia.categoria.toLowerCase() === this.temaFiltro.toLowerCase()
+      );
+    }
+
+    // Filtrar por precio mínimo
+if (!isNaN(this.precioMinFiltro)) {
+  this.experienciaList = this.experienciaList.filter(experiencia =>
+    parseFloat(experiencia.precio) >= this.precioMinFiltro
+  );
+}
+
+// Filtrar por precio máximo
+if (!isNaN(this.precioMaxFiltro)) {
+  this.experienciaList = this.experienciaList.filter(experiencia =>
+    parseFloat(experiencia.precio) <= this.precioMaxFiltro
+  );
+}
+  }
 }

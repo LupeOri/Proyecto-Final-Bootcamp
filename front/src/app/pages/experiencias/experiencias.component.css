@@ -9,7 +9,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 .experiencia-imagen {
   width: 100%;
   max-height: 200px;
@@ -45,7 +44,6 @@
   justify-content: space-between;
   align-items: center;
 }
-
 
 .precio {
   font-size: 1.2rem;
@@ -100,7 +98,8 @@ button:hover {
     font-size: 1.2rem;
   }
 
-  .experiencia-ubicacion, .experiencia-description {
+  .experiencia-ubicacion,
+  .experiencia-description {
     font-size: 0.9rem;
   }
 
@@ -109,5 +108,3 @@ button:hover {
     padding: 10px;
   }
 }
-
-  

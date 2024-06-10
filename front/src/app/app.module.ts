@@ -10,7 +10,7 @@ import { CarritoComponent } from './pages/carrito/carrito.component';
 import { ExperienciasComponent } from './pages/experiencias/experiencias.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ExperienceDetailComponent } from './pages/experiencias/experience-detail/experience-detail.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/registro/registro.component';
 import { ComoFuncionaComponent } from './pages/como-funciona/como-funciona.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
@@ -34,7 +34,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule	
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

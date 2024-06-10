@@ -1,9 +1,14 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
 
 // Inicializar la aplicación Express
 const app = express();
+
+// Middleware
+app.use(bodyParser.json());
+app.use(cors()); // Habilitar CORS
 
 // Configurar CORS
 app.use(cors());
@@ -41,6 +46,13 @@ app.use("/", (req, res) => {
 
 app.use(notFoundHandler);
 app.use(errorHandler);
+
+// Ruta para manejar el envío del formulario
+app.post("/contacto", (req, res) => {
+  const { name, email, message } = req.body;
+  console.log(`Nombre: ${name}, Email: ${email}, Mensaje: ${message}`);
+  res.status(200).send("Mensaje recibido");
+});
 
 app.listen(PORT, () =>
   console.log(`Escuchando en el puerto http://localhost:${PORT}`)

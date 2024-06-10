@@ -1,1 +1,28 @@
-<p>contacto works!</p>
+<div class="contact-container">
+  <h2>Formulario de contacto</h2>
+  <form [formGroup]="contactForm" (submit)="handleContactForm()">
+    <div class="form-group">
+      <label for="firstName">Nombre:</label>
+      <!-- <input id="firstName" formControlName="firstName" type="text" required /> -->
+      <input id="firstName" type="text" required />
+    </div>
+    <!-- <div class="form-group">
+          <label for="lastName">Apellidos:</label>
+          <input id="lastName" formControlName="lastName" type="text" required />
+          <input id="lastName" type="text" required />
+        </div> -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <!-- <input id="email" formControlName="email" type="email" required /> -->
+      <input id="email" type="email" required />
+    </div>
+    <div class="form-group">
+      <label for="mensaje">Mensaje</label>
+      <!-- <input id="email" formControlName="email" type="email" required /> -->
+      <input id="mensaje" type="text" required />
+    </div>
+
+    <!-- <button type="submit" [disabled]="registerForm.invalid">Registrarse</button> -->
+    <button type="submit">Enviar mensaje</button>
+  </form>
+</div>

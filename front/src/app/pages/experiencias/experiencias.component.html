@@ -1,24 +1,46 @@
-<div class="experiencia-container">
+<div class="filtro-container">
+  <label for="ciudadFiltro">Ciudad:</label>
+  <input type="text" id="ciudadFiltro" [(ngModel)]="ciudadFiltro" />
 
-<div *ngFor="let experiencia of experienciaList" class="experiencia-card">
-  <img
-    [src]="experiencia.imagenes"
-    [alt]="experiencia.titulo"
-    class="experiencia-imagen"
-  />
-  <div class="experiencia-details">
-    <h2 class="experiencia-titulo">{{ experiencia.titulo }}</h2>
-    <p class="experiencia-ubicacion">{{ experiencia.ubicacion }}</p>
-    <p class="experiencia-description">{{ experiencia.descripcion }}</p>
-    <div class="card-footer">
-      <p class="precio">{{ experiencia.precio }}</p>
-      <div class="duracion">
-        <p>Duracion: {{ experiencia.duracion }}</p>
+  <label for="temaFiltro">Tema:</label>
+  <select id="temaFiltro" [(ngModel)]="temaFiltro">
+    <option value="">Todos</option>
+    <option value="cena">Cena</option>
+    <option value="tour">Tour</option>
+    <!-- Agrega más opciones según los temas disponibles -->
+  </select>
+
+  <label for="precioMinFiltro">Precio mínimo:</label>
+  <input type="number" id="precioMinFiltro" [(ngModel)]="precioMinFiltro" />
+
+  <label for="precioMaxFiltro">Precio máximo:</label>
+  <input type="number" id="precioMaxFiltro" [(ngModel)]="precioMaxFiltro" />
+
+  <button (click)="aplicarFiltros()">Aplicar Filtros</button>
+</div>
+
+<div class="experiencia-container">
+  <div *ngFor="let experiencia of experienciaList" class="experiencia-card">
+    <img
+      [src]="experiencia.imagenes"
+      [alt]="experiencia.titulo"
+      class="experiencia-imagen"
+    />
+    <div class="experiencia-details">
+      <h2 class="experiencia-titulo">{{ experiencia.titulo }}</h2>
+      <p class="experiencia-ubicacion">{{ experiencia.ubicacion }}</p>
+      <p class="experiencia-description">{{ experiencia.descripcion }}</p>
+      <div class="card-footer">
+        <p class="precio">{{ experiencia.precio }}</p>
+        <div class="duracion">
+          <p>Duracion: {{ experiencia.duracion }}</p>
+        </div>
+      </div>
+      <div>
+        <button [routerLink]="'/experiencias/' + experiencia._id">
+          Ver más
+        </button>
       </div>
     </div>
-    <div>
-      <button [routerLink]="'/experiencias/' + experiencia._id">Ver más</button>
-    </div>
   </div>
-</div>
 </div>
