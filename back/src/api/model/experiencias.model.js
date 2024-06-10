@@ -21,7 +21,7 @@ const experienciaSchema = new Schema({
   valoraciones: {
     type: Schema.Types.ObjectId,
     ref: "valoracion",
-    required: true,
+    required: false,
   },
   imagenes: { type: String, require: false },
 });

@@ -33,7 +33,6 @@ export class RegisterComponent {
       console.log('Formulario válido, datos:', this.registerForm.value);
       this.authService.register(this.registerForm.value).subscribe(
         (response: any) => {
-          alert(response.msg);
           this.successRegister = true;
           this.registerForm.reset();
         },

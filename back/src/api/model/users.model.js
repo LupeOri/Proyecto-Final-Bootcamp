@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
   tipo: {
     type: String,
     default: "invitado",
-    enum: ["invitado", "anfitrion"],
+    enum: ["invitado", "anfitrión"],
     required: true,
   },
   nombre: { type: String, trim: true, required: true },
