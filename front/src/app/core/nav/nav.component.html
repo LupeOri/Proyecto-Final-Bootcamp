@@ -7,11 +7,15 @@
     <a routerLink="/contacto">Contacto</a>
   </div>
   <div class="auth-links">
-    <a routerLink="/registro">Registrarme</a>
-    <a routerLink="/login">Iniciar sesión</a>
-    <!-- <a *ngIf="!authService.isAuthenticate()" routerLink="/login"
+    <a *ngIf="!authService.isAuthenticate()" routerLink="/registro"
+      >Registrarme</a
+    >
+    <a *ngIf="!authService.isAuthenticate()" routerLink="/login"
       >Iniciar sesión</a
     >
-    <a *ngIf="authService.isAuthenticate()" routerLink="/login">My Reservas</a> -->
+    <a *ngIf="authService.isAuthenticate()" routerLink="/misreservas"
+      >Mis Reservas</a
+    >
+    <a *ngIf="authService.isAuthenticate()" (click)="logout()">Cerrar sesión</a>
   </div>
 </nav>
