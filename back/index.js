@@ -1,5 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const configMensaje = require("./configMensaje"); // Corregido el uso de comillas
 const cors = require("cors");
 const path = require("path");
 
@@ -52,6 +53,11 @@ app.post("/contacto", (req, res) => {
   const { name, email, message } = req.body;
   console.log(`Nombre: ${name}, Email: ${email}, Mensaje: ${message}`);
   res.status(200).send("Mensaje recibido");
+});
+
+app.post("/formulario", (req, res) => {
+  configMensaje(req.body);
+  res.status(200).send();
 });
 
 app.listen(PORT, () =>
