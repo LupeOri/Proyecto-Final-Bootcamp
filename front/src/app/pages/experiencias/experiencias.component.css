@@ -1,67 +1,113 @@
 .experiencia-card {
-    display: flex;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.experiencia-imagen {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.experiencia-details {
+  flex: 1;
+  padding: 20px;
+}
+
+.experiencia-titulo {
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.experiencia-ubicacion {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.experiencia-description {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.precio {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.duracion {
+  color: gold;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.experiencia-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .experiencia-card {
+    flex-direction: column;
   }
-  
-  .experiencia-imagen {
-    width: 200px; 
-    
-  }
-  
-  .experiencia-details {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  .experiencia-titulo {
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
-  
-  .experiencia-ubicacion {
-    color: #666;
-    font-size: 1rem;
-    margin-top: 0;
-    margin-bottom: 10px;
-  }
-  
-  .experiencia-description {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
+
   .card-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
+
   .precio {
+    margin-bottom: 10px;
+  }
+
+  .duracion {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experiencia-titulo {
     font-size: 1.2rem;
-    font-weight: bold;
   }
-  
-  .stars {
-    color: gold;
+
+  .experiencia-ubicacion, .experiencia-description {
+    font-size: 0.9rem;
   }
-  
+
   button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    width: 100%;
+    padding: 10px;
   }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
+}
+
   

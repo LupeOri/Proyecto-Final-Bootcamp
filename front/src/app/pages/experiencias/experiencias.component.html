@@ -1,3 +1,5 @@
+<div class="experiencia-container">
+
 <div *ngFor="let experiencia of experienciaList" class="experiencia-card">
   <img
     [src]="experiencia.imagenes"
@@ -10,7 +12,7 @@
     <p class="experiencia-description">{{ experiencia.descripcion }}</p>
     <div class="card-footer">
       <p class="precio">{{ experiencia.precio }}</p>
-      <div class="stars">
+      <div class="duracion">
         <p>Duracion: {{ experiencia.duracion }}</p>
       </div>
     </div>
@@ -18,4 +20,5 @@
       <button [routerLink]="'/experiencias/' + experiencia._id">Ver más</button>
     </div>
   </div>
+</div>
 </div>
