@@ -7,6 +7,8 @@ import { RegisterComponent } from './pages/registro/registro.component';
 import { LoginComponent } from './pages/login/login.component';
 import { ComoFuncionaComponent } from './pages/como-funciona/como-funciona.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { ExperienciasAnfitrionComponent } from './pages/perfil-usuario/experiencias-anfitrion/experiencias-anfitrion.component';
+import { TokenGuard } from './guards/token.guard';
 
 const routes: Routes = [
 {
@@ -20,6 +22,9 @@ const routes: Routes = [
 },
 {
 path: "experiencias/:id", component: ExperienceDetailComponent
+},
+{
+  path: "myexperiencias", component: ExperienciasAnfitrionComponent, canActivate:[TokenGuard]
 },
 {
   path: "contacto", component: ContactoComponent

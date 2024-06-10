@@ -14,8 +14,17 @@ export class AuthService {
     return this.http.post(`${this.API_URL}/users/register`, userToRegister)
     }
     
-    login() {
-      return this.http.post(`${this.API_URL}/users/login`, {})
+    login(userToLogin: any) {
+      return this.http.post(`${this.API_URL}/users/login`, userToLogin)
+    }
+
+    isAuthenticate(): boolean {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        return false
+      } else {
+        return true
+      }
     }
 
 }

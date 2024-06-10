@@ -20,6 +20,7 @@ export class ContactoComponent {
   }
 
 handleContactForm() {
+  console.log("Se ha enviado el formulario");
   
 }
 
