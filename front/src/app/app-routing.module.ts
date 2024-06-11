@@ -1,3 +1,4 @@
+import { ReservasComponent } from './pages/perfil-usuario/reservas/reservas.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ExperienciasComponent } from './pages/experiencias/experiencias.component';
@@ -34,6 +35,9 @@ path: "experiencias/:id", component: ExperienceDetailComponent
 },
 {
   path: "login", component: LoginComponent
+},
+{
+  path: "myreservas", component: ReservasComponent, canActivate:[TokenGuard]
 },
 // {
 //   path: "404", component:
