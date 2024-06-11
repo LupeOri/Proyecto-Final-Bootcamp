@@ -26,6 +26,7 @@ const experienciasRouter = require("./src/api/routes/experiencias.routes");
 const reservasRouter = require("./src/api/routes/reservas.routes");
 const valoracionesRouter = require("./src/api/routes/valoraciones.routes");
 const userRouter = require("./src/api/routes/users.routes");
+const { log } = require("console");
 
 const PORT = process.env.PORT;
 
@@ -41,23 +42,18 @@ app.use("/reservas", reservasRouter);
 app.use("/valoraciones", valoracionesRouter);
 app.use("/users", userRouter);
 
-app.use("/", (req, res) => {
-  res.json("Este es el home");
-});
-
 app.use(notFoundHandler);
 app.use(errorHandler);
 
 // Ruta para manejar el envío del formulario
-app.post("/contacto", (req, res) => {
-  const { name, email, message } = req.body;
-  console.log(`Nombre: ${name}, Email: ${email}, Mensaje: ${message}`);
-  res.status(200).send("Mensaje recibido");
-});
+// app.post("/contacto", (req, res) => {
+//   const { name, email, message } = req.body;
+//   console.log(`Nombre: ${name}, Email: ${email}, Mensaje: ${message}`);
+//   res.status(200).send("Mensaje recibido");
+// });
 
-app.post("/formulario", (req, res) => {
-  configMensaje(req.body);
-  res.status(200).send();
+app.use("/", (req, res) => {
+  res.json("Este es el home");
 });
 
 app.listen(PORT, () =>

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
 import { ExperienciasComponent } from './pages/experiencias/experiencias.component';
 import { ExperienceDetailComponent } from './pages/experiencias/experience-detail/experience-detail.component';
 import { RegisterComponent } from './pages/registro/registro.component';
@@ -9,6 +8,7 @@ import { ComoFuncionaComponent } from './pages/como-funciona/como-funciona.compo
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ExperienciasAnfitrionComponent } from './pages/perfil-usuario/experiencias-anfitrion/experiencias-anfitrion.component';
 import { TokenGuard } from './guards/token.guard';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
 {

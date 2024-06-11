@@ -24,6 +24,7 @@ handleContactForm() {
     this.contactService.contact(this.contactForm.value).subscribe(
       (response) => {
         console.log("Formulario enviado correctamente");
+        console.log(response);
         
       },
       (error) => {
