@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './pages/registro/registro.component';
 import { ComoFuncionaComponent } from './pages/como-funciona/como-funciona.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
     RegisterComponent,
     ExperienceDetailComponent,
     ComoFuncionaComponent,
-    ContactoComponent
+    ContactoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
