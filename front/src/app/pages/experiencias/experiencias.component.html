@@ -1,12 +1,15 @@
 <div class="filtro-container">
-  <label for="ciudadFiltro">Ciudad:</label>
+  <label for="ciudadFiltro">Ubicación:</label>
   <input type="text" id="ciudadFiltro" [(ngModel)]="ciudadFiltro" />
 
-  <label for="temaFiltro">Tema:</label>
+  <label for="temaFiltro">Categoria:</label>
   <select id="temaFiltro" [(ngModel)]="temaFiltro">
     <option value="">Todos</option>
-    <option value="cena">Cena</option>
-    <option value="tour">Tour</option>
+    <option value="cena">Gastronomia</option>
+    <option value="tour">Tours</option>
+    <option value="tour">Fiestas</option>
+    <option value="tour">Clases</option>
+    <option value="tour">Catas</option>
     <!-- Agrega más opciones según los temas disponibles -->
   </select>
 

@@ -1,29 +1,3 @@
 <nav>
-  <div class="logo">MiLogo</div>
-  <div class="menu">
-    <a routerLink="/">Home</a>
-    <a routerLink="/comofunciona">¿Cómo funciona?</a>
-    <a routerLink="/experiencias">Experiencias</a>
-    <a routerLink="/contacto">Contacto</a>
-  </div>
-  <div class="auth-links">
-    <a *ngIf="!authService.isAuthenticate()" routerLink="/registro"
-      >Registrarme</a
-    >
-    <a *ngIf="!authService.isAuthenticate()" routerLink="/login"
-      >Iniciar sesión</a
-    >
-    <a *ngIf="authService.isAuthenticate()" routerLink="/misreservas"
-      >Mis Reservas</a
-    >
-    <a
-      *ngIf="
-        authService.isAuthenticate() &&
-        authService.getUserRole() === 'anfitrión'
-      "
-      routerLink="/misexperiencias"
-      >Mis Experiencias</a
-    >
-    <a *ngIf="authService.isAuthenticate()" (click)="logout()">Cerrar sesión</a>
-  </div>
+  <app-header></app-header>
 </nav>

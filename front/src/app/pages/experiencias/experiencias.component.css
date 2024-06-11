@@ -1,110 +1,46 @@
-.experiencia-card {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin: 10px;
-  overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.experiencia-imagen {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-}
-
-.experiencia-details {
-  flex: 1;
+.filtro-container {
+  background-color: #71c5b7; 
   padding: 20px;
-}
-
-.experiencia-titulo {
-  font-size: 1.5rem;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.experiencia-ubicacion {
-  color: #666;
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.experiencia-description {
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.card-footer {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.precio {
-  font-size: 1.2rem;
+.filtro-container label,
+.filtro-container input[type="text"],
+.filtro-container input[type="number"],
+.filtro-container select,
+.filtro-container button {
+  margin-right: 10px;
+}
+
+.filtro-container label {
   font-weight: bold;
+  color: white;
+  font-size: 20px;
 }
 
-.duracion {
-  color: gold;
+.filtro-container input[type="text"],
+.filtro-container input[type="number"],
+.filtro-container select {
+  flex: 1;
 }
 
-button {
+.filtro-container button {
   padding: 10px 20px;
-  background-color: #007bff;
+  background-color: #2faf9a;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-button:hover {
-  background-color: #0056b3;
-}
+.filtro-container button:hover {
+  background-color: #2faf9a;
 
-.experiencia-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-@media (max-width: 768px) {
-  .experiencia-card {
-    flex-direction: column;
-  }
-
-  .card-footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .precio {
-    margin-bottom: 10px;
-  }
-
-  .duracion {
-    margin-bottom: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .experiencia-titulo {
-    font-size: 1.2rem;
-  }
-
-  .experiencia-ubicacion,
-  .experiencia-description {
-    font-size: 0.9rem;
-  }
-
-  button {
-    width: 100%;
-    padding: 10px;
-  }
 }

@@ -1,2 +1,60 @@
 
+.como-funciona {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .como-funciona h1,
+  .como-funciona h2,
+  .como-funciona h3 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+ 
+  .como-funciona section {
+    margin-bottom: 30px;
+  }
+  
+
+  .como-funciona p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+
+  .como-funciona .paso img {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+
+  .como-funciona ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+
+  .como-funciona .pregunta {
+    margin-bottom: 20px;
+  }
+  
+  .como-funciona .pregunta h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+
+  .como-funciona a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .como-funciona a:hover {
+    text-decoration: underline;
+  }
+  
   

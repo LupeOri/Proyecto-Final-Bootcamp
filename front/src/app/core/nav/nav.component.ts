@@ -8,10 +8,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class NavComponent {
 
-  constructor(public authService: AuthService) {}
+  // constructor(public authService: AuthService) {}
 
-  logout() {
-    this.authService.logout();
-  }
+  // logout() {
+  //   this.authService.logout();
+  // }
 
 }
