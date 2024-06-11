@@ -13,9 +13,9 @@ const experienciaSchema = new Schema({
     enum: ["cena", "cata", "tour", "clases", "fiesta", "otras categorias"],
     require: true,
   }, //cena, tour, clases, etc
-  usuario: {
+  users: {
     type: Schema.Types.ObjectId,
-    ref: "usuario",
+    ref: "users",
     required: true,
   },
   valoraciones: {

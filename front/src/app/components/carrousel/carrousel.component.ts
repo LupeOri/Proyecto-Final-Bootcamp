@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class CarrouselComponent implements OnInit{
 
   images: string[] = [
-    'assets/imagenes/fiestaplayados.jpeg',
-    'assets/imagenes/caballo.jpeg',
+    'assets/imagenes/fiestaplayados.jpg',
+    'assets/imagenes/caballo.jpg',
     'assets/imagenes/tour-amsterdam.jpg',
     'assets/imagenes/panoramico.webp',
     'assets/imagenes/montanismo.jpg',
-    'assets/imagenes/azotea.avif'
+    'assets/imagenes/azotea.jpg'
   ];
 
   currentIndex = 0;
@@ -23,7 +23,7 @@ export class CarrouselComponent implements OnInit{
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
       const slides = document.querySelector('.slides') as HTMLElement;
       slides.style.transform = `translateX(-${this.currentIndex * 100}%)`;
-    }, 3000); // Cambiar imagen cada 3 segundos
+    }, 3000); 
   }
 
 }
