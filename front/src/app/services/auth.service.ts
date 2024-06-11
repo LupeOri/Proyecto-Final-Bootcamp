@@ -34,6 +34,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -43,7 +44,7 @@ export class AuthService {
   private tokenKey = 'token';
   private roleKey = 'role';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   register(userToRegister: any): Observable<any> {
     return this.http.post(`${this.API_URL}/users/register`, userToRegister);
@@ -59,6 +60,13 @@ export class AuthService {
             this.setRole(response.data.user.tipo);
             console.log('Token guardado:', response.data.token);
             console.log('Rol guardado:', response.data.user.tipo);
+
+            // Redirigir según el rol del usuario
+            if (response.data.user.tipo === 'anfitrión') {
+              this.router.navigate(['/myexperiences']);
+            } else if (response.data.user.tipo === 'invitado') {
+              this.router.navigate(['/experiences']);
+            }
           } else {
             console.error('No se encontró el token o el rol en la respuesta');
           }
