@@ -1,25 +1,18 @@
 <div class="reserva-container">
-  <div *ngFor="let reserva of experienciaList" class="experiencia-card">
-    <img
-      [src]="experiencia.imagenes"
-      [alt]="experiencia.titulo"
-      class="experiencia-imagen"
-    />
-    <div class="experiencia-details">
-      <h2 class="experiencia-titulo">{{ experiencia.titulo }}</h2>
-      <p class="experiencia-ubicacion">{{ experiencia.ubicacion }}</p>
-      <p class="experiencia-description">{{ experiencia.descripcion }}</p>
+  <div *ngFor="let reserva of reservaList" class="reserva-card">
+    <div class="reserva-details">
+      <h2 class="reserva-experiencia">{{ reserva.experiencia }}</h2>
+      <p class="reserva-usuario">{{ reserva.usuario }}</p>
+      <p class="reserva-fecha">{{ reserva.fecha }}</p>
+      <p class="reserva-estado">{{ reserva.estado }}</p>
       <div class="card-footer">
-        <p class="precio">{{ experiencia.precio }}</p>
+        <p class="comentario">{{ reserva.comentario }}</p>
         <div class="duracion">
-          <p>Duracion: {{ experiencia.duracion }}</p>
+          <p>Cantidad de personas: {{ reserva.personas }}</p>
         </div>
       </div>
       <div>
-        <button [routerLink]="'/experiencias/' + experiencia._id">
-          Ver más
-        </button>
-        <button [routerLink]="'/login'">Reservar</button>
+        <button [routerLink]="['/myreservas', reserva.id]">Ver reserva</button>
       </div>
     </div>
   </div>

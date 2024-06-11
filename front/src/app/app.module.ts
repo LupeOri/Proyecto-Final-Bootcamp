@@ -16,6 +16,8 @@ import { ComoFuncionaComponent } from './pages/como-funciona/como-funciona.compo
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
+import { RouterModule } from '@angular/router';
+import { ReservasComponent } from './pages/perfil-usuario/reservas/reservas.component';
 
 
 @NgModule({
@@ -32,14 +34,16 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
     ComoFuncionaComponent,
     ContactoComponent,
     FooterComponent,
-    CarrouselComponent
+    CarrouselComponent,
+    ReservasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

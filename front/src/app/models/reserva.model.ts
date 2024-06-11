@@ -7,5 +7,6 @@ export interface Reserva {
     usuario: Usuario;
     fecha: string;
     estado: 'confirmada' | 'pendiente' | 'cancelada' | 'a confirmar';
-    total?: number;
+    personas?: number;
+    comentario?: string;
   }

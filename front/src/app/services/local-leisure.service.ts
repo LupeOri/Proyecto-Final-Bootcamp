@@ -9,7 +9,7 @@ export class LocalLeisureService {
    private baseUrl: string = "http://localhost:5000/"
 
   constructor(private http:HttpClient) {}
-    getExperiencias() {
+    getExperiencias(){
       return this.http.get(`${this.baseUrl}experiencias`);
 
   }
@@ -17,5 +17,9 @@ export class LocalLeisureService {
   getExperienciasById(id: string){
     return this.http.get(`${this.baseUrl}experiencias/${id}`)
    
+  }
+
+  getReservas(){
+    return this.http.get(`${this.baseUrl}reservas`);
   }
 }

@@ -32,28 +32,28 @@ export class ExperienciasComponent implements OnInit {
       }
 
   aplicarFiltros() {
-    // Filtrar por ciudad
+    
     if (this.ciudadFiltro) {
       this.experienciaList = this.experienciaList.filter(experiencia =>
         experiencia.ubicacion.includes(this.ciudadFiltro)
       );
     }
 
-    // Filtrar por tema
+
     if (this.temaFiltro) {
       this.experienciaList = this.experienciaList.filter(experiencia =>
         experiencia.categoria.toLowerCase() === this.temaFiltro.toLowerCase()
       );
     }
 
-    // Filtrar por precio mínimo
+  
 if (!isNaN(this.precioMinFiltro)) {
   this.experienciaList = this.experienciaList.filter(experiencia =>
     parseFloat(experiencia.precio) >= this.precioMinFiltro
   );
 }
 
-// Filtrar por precio máximo
+
 if (!isNaN(this.precioMaxFiltro)) {
   this.experienciaList = this.experienciaList.filter(experiencia =>
     parseFloat(experiencia.precio) <= this.precioMaxFiltro
