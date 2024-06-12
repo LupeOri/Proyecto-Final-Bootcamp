@@ -92,10 +92,26 @@ const deleteReserva = async (req, res) => {
   }
 };
 
+const postPago = async (req, res) => {
+  try {
+    // console.log(req.body);
+    const newPago = new Pago(req.body);
+    // .populate("experiencia", "experiencia fecha estado total");
+    console.log("Ok");
+    return res
+      .status(201)
+      .json({ data: { message: "ok", user: userInfo, token: token } });
+  } catch (error) {
+    // console.log(error);
+    return res.status(500).json(error);
+  }
+};
+
 module.exports = {
   getReservas,
   getReservaById,
   postReserva,
   putReserva,
   deleteReserva,
+  postPago,
 };

@@ -37,7 +37,7 @@ const login = async (req, res, next) => {
       );
 
       return res.status(200).json({
-        data: { massage: "ok", user: userInfo, token: token },
+        data: { message: "ok", user: userInfo, token: token },
       });
     } else {
       return res.json({

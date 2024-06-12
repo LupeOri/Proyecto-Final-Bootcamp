@@ -18,15 +18,17 @@ export class ReservasComponent implements OnInit {
       this.localLeisureService.getReservas().subscribe(
         (response: any) => {
           if (Array.isArray(response)) {
-            this.reservaList = response.map(reserva => ({
-              id: reserva._id,
-              experiencia: reserva.experiencia,
-              usuario: reserva.usuario,
-              fecha: reserva.fecha,
-              estado: reserva.estado,
-              comentario: reserva.comentario,
-              personas: reserva.personas
-            }));
+            this.reservaList = response
+              .filter(reserva => reserva.estado === 'confirmada') // Filtre les réservations par statut "confirmada"
+              .map(reserva => ({
+                id: reserva._id,
+                experiencia: reserva.experiencia,
+                usuario: reserva.usuario,
+                fecha: reserva.fecha,
+                estado: reserva.estado,
+                comentario: reserva.comentario,
+                personas: reserva.personas
+              }));
           } else {
             console.error('La respuesta de la API no es un array válido:', response);
           }
