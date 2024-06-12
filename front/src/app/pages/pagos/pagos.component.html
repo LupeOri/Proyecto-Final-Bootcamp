@@ -1,7 +1,8 @@
 <div *ngIf="experiencia">
-    <h1>{{ mensaje }}</h1>
-    <h2>{{ experiencia.titulo }}</h2>
-    <p>{{ experiencia.descripcion }}</p>
-    <p>Precio: {{ experiencia.precio }}</p>
-    <!-- Nos faltaria añadir aca mas detalles y la pasarela de pago -->
-  </div>
+  <h1>{{ mensaje }}</h1>
+  <h2>{{ experiencia.titulo }}</h2>
+  <p>{{ experiencia.descripcion }}</p>
+  <p>Precio: {{ experiencia.precio }}</p>
+  <!-- Nos faltaria añadir aca mas detalles y la pasarela de pago -->
+  <button [routerLink]="'/myreservas/pago'">Pagar</button>
+</div>

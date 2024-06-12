@@ -11,6 +11,7 @@ import { ExperienciasAnfitrionComponent } from './pages/perfil-usuario/experienc
 import { TokenGuard } from './guards/token.guard';
 import { HomeComponent } from './components/home/home.component';
 import { PagosComponent } from './pages/pagos/pagos.component';
+import { PagosFormComponent } from './components/pagos-form/pagos-form.component';
 
 const routes: Routes = [
 {
@@ -44,6 +45,9 @@ path: "experiencias/:id", component: ExperienceDetailComponent
 },
 {
   path: "myreservas", component: ReservasComponent, canActivate:[TokenGuard]
+},
+{
+  path: "myreservas/pago", component: PagosFormComponent, canActivate:[TokenGuard]
 },
 // {
 //   path: "404", component:

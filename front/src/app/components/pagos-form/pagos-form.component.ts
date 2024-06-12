@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PagosService } from '../../services/pagos.service';
 
@@ -7,32 +7,33 @@ import { PagosService } from '../../services/pagos.service';
   templateUrl: './pagos-form.component.html',
   styleUrls: ['./pagos-form.component.css']
 })
-export class PagosFormComponent {
+export class PagosFormComponent implements OnInit {
   public pagosForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private pagos: PagosService) {
+  constructor(private fb: FormBuilder, private pagosService: PagosService) {
     this.pagosForm = this.fb.group({
       nombre: ['', Validators.required],
       tarjeta: ['', Validators.required],
       fecha: ['', Validators.required],
       codigo: ['', Validators.required]
-    })
+    });
   }
 
-  handlePagosForm() {
+  ngOnInit(): void {}
+
+  handlePagosForm(): void {
     if (this.pagosForm.valid) {
       this.pagosService.pagos(this.pagosForm.value).subscribe(
-        (response) => {
-          console.log("Pago realizado correctamentem reserva confirmada");
+        (response: any) => {
+          console.log("Pago realizado correctamente, reserva confirmada");
           console.log(response);
-          
         },
-        (error) => {
+        (error: any) => {
           console.error("El pago no se ha podido realizar", error);
-  }
+        }
       );
-} else {
-  console.error("El pago no es válido");
-}
+    } else {
+      console.error("El formulario de pago no es válido");
+    }
   }
 }
