@@ -1,12 +1,14 @@
 <div class="reserva-container">
   <div *ngFor="let reserva of reservaList" class="reserva-card">
     <div class="reserva-details">
-      <h2 class="reserva-experiencia">{{ reserva.experiencia }}</h2>
-      <p class="reserva-usuario">{{ reserva.usuario }}</p>
-      <p class="reserva-fecha">{{ reserva.fecha }}</p>
-      <p class="reserva-estado">{{ reserva.estado }}</p>
+      <h2 class="reserva-experiencia">
+        Experiencia: {{ reserva.experiencia.nombre }}
+      </h2>
+      <p class="reserva-usuario">Usuario: {{ reserva.usuario.nombre }}</p>
+      <p class="reserva-fecha">Fecha: {{ reserva.fecha }}</p>
+      <p class="reserva-estado">Estado: {{ reserva.estado }}</p>
       <div class="card-footer">
-        <p class="comentario">{{ reserva.comentario }}</p>
+        <p class="comentario">Comentario: {{ reserva.comentario }}</p>
         <div class="duracion">
           <p>Cantidad de personas: {{ reserva.personas }}</p>
         </div>

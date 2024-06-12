@@ -12,4 +12,5 @@ export interface Experiencia {
     usuario: Usuario;
     valoraciones: Valoracion[];
     imagenes?: string;
+    nombre: string;
   }
