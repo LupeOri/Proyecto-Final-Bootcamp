@@ -1,0 +1,53 @@
+/* Reserva card */
+.reserva-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .reserva-card {
+    width: 300px;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .reserva-details {
+    margin-top: 1rem;
+  }
+  
+  .reserva-experiencia {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .reserva-usuario,
+  .reserva-fecha,
+  .reserva-estado {
+    color: #777;
+  }
+  
+  .card-footer {
+    margin-top: 1rem;
+  }
+  
+  .comentario {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Botón */
+  button {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #2faa96;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #20685c;
+  }
+  

@@ -4,7 +4,7 @@
       <h2 class="reserva-experiencia">
         Reserva: {{ reserva.experiencia?.nombre }}
       </h2>
-      <p class="reserva-usuario">Usuario: {{ reserva.usuario.nombre }}</p>
+      <p class="reserva-usuario">Invitado: {{ reserva.usuario.nombre }}</p>
       <p class="reserva-fecha">Fecha: {{ reserva.fecha }}</p>
       <p class="reserva-estado">Estado: {{ reserva.estado }}</p>
       <div class="card-footer">
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div>
-        <button [routerLink]="['/myreservas', reserva.id]">Ver reserva</button>
+        <button [routerLink]="['/myreservas', reserva.id]">Pagar</button>
       </div>
     </div>
   </div>

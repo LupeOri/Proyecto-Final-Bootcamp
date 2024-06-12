@@ -1,46 +1,70 @@
-.filtro-container {
-  background-color: #71c5b7; 
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+.experiencia-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.experiencia-card {
+  width: 300px;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experiencia-imagen {
+  width: 100%;
+  height: 200px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.experiencia-details {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  margin-top: auto; /* Mueve el pie de la tarjeta hacia abajo */
+  align-self: flex-end; /* Alinea el pie de la tarjeta al final de la tarjeta */
 }
 
-.filtro-container label,
-.filtro-container input[type="text"],
-.filtro-container input[type="number"],
-.filtro-container select,
-.filtro-container button {
-  margin-right: 10px;
+.card-footer button {
+  margin-top: 0.5rem; /* Ajusta el espacio entre botones */
 }
 
-.filtro-container label {
-  font-weight: bold;
-  color: white;
-  font-size: 20px;
+.precio {
+  font-size: 1.2rem;
 }
 
-.filtro-container input[type="text"],
-.filtro-container input[type="number"],
-.filtro-container select {
-  flex: 1;
+.duracion {
+  margin-top: 0.5rem;
 }
 
-.filtro-container button {
-  padding: 10px 20px;
-  background-color: #2faf9a;
+button {
+  padding: 0.5rem 1rem;
   color: #fff;
+  background-color: #2faa96;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  margin-left: 35px;
+
 }
 
-.filtro-container button:hover {
-  background-color: #2faf9a;
+button:hover {
+  background-color: #20685c;
+}
 
+.experiencia-titulo {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center; /* Centra el título */
 }
