@@ -19,6 +19,7 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { RouterModule } from '@angular/router';
 import { ReservasComponent } from './pages/perfil-usuario/reservas/reservas.component';
 import { PagosComponent } from './pages/pagos/pagos.component';
+import { PagosFormComponent } from './components/pagos-form/pagos-form.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { PagosComponent } from './pages/pagos/pagos.component';
     FooterComponent,
     CarrouselComponent,
     ReservasComponent,
-    PagosComponent
+    PagosComponent,
+    PagosFormComponent
   ],
   imports: [
     BrowserModule,
