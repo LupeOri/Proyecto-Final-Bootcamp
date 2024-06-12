@@ -2,14 +2,14 @@
   <label for="ciudadFiltro">Ubicación:</label>
   <input type="text" id="ciudadFiltro" [(ngModel)]="ciudadFiltro" />
 
-  <label for="temaFiltro">Categoria:</label>
+  <label for="temaFiltro">Categoría:</label>
   <select id="temaFiltro" [(ngModel)]="temaFiltro">
     <option value="">Todos</option>
-    <option value="cena">Gastronomia</option>
+    <option value="cena">Gastronomía</option>
     <option value="tour">Tours</option>
-    <option value="tour">Fiestas</option>
-    <option value="tour">Clases</option>
-    <option value="tour">Catas</option>
+    <option value="fiesta">Fiestas</option>
+    <option value="clase">Clases</option>
+    <option value="cata">Catas</option>
     <!-- Agrega más opciones según los temas disponibles -->
   </select>
 
@@ -36,15 +36,21 @@
       <div class="card-footer">
         <p class="precio">{{ experiencia.precio }}</p>
         <div class="duracion">
-          <p>Duracion: {{ experiencia.duracion }}</p>
+          <p>Duración: {{ experiencia.duracion }}</p>
         </div>
       </div>
       <div>
         <button [routerLink]="'/experiencias/' + experiencia._id">
           Ver más
         </button>
-        <button [routerLink]="'/login'">Reservar</button>
+        <button *ngIf="authService.isAuthenticate(); else loginLink" [routerLink]="'/pagos/' + experiencia._id">
+          Reservar
+        </button>
+        <ng-template #loginLink>
+          <button [routerLink]="'/login'">Reservar</button>
+        </ng-template>
       </div>
     </div>
   </div>
 </div>
+

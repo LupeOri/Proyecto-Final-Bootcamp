@@ -2,7 +2,7 @@
   <div *ngFor="let reserva of reservaList" class="reserva-card">
     <div class="reserva-details">
       <h2 class="reserva-experiencia">
-        Experiencia: {{ reserva.experiencia.nombre }}
+        Reserva: {{ reserva.experiencia?.nombre }}
       </h2>
       <p class="reserva-usuario">Usuario: {{ reserva.usuario.nombre }}</p>
       <p class="reserva-fecha">Fecha: {{ reserva.fecha }}</p>

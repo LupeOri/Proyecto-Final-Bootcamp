@@ -1,34 +1,3 @@
-// import { environment } from './../../../../back/src/api/environment/environment.prod';
-// import { HttpClient } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthService {
-//   public API_URL = environment.api_url
-
-//   constructor(private http: HttpClient) { }
-
-//   register(userToRegister: any) {
-//     return this.http.post(`${this.API_URL}/users/register`, userToRegister)
-//     }
-    
-//     login(userToLogin: any) {
-//       return this.http.post(`${this.API_URL}/users/login`, userToLogin)
-//     }
-
-//     isAuthenticate(): boolean {
-//       const token = localStorage.getItem('token');
-//       if (!token) {
-//         return false
-//       } else {
-//         return true
-//       }
-//     }
-
-// }
-
 import { environment } from './../../../../back/src/api/environment/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -57,7 +26,7 @@ export class AuthService {
         if (response && response.data) {
           if (response.data.token && response.data.user && response.data.user.tipo) {
             this.setToken(response.data.token);
-            this.setRole(response.data.user.tipo);
+            this.setRole(response.data.user.tipo); // Aquí se llama al método setRole()
             console.log('Token guardado:', response.data.token);
             console.log('Rol guardado:', response.data.user.tipo);
 
@@ -87,17 +56,17 @@ export class AuthService {
     return role as 'invitado' | 'anfitrión' | null;
   }
 
-  private setToken(token: string): void {
+  public setToken(token: string): void {
     localStorage.setItem(this.tokenKey, token);
     console.log('Token guardado en localStorage:', localStorage.getItem(this.tokenKey));
   }
 
-  private setRole(role: string): void {
-    localStorage.setItem(this.roleKey, role);
+  public getToken(): string | null {
+    return localStorage.getItem(this.tokenKey);
   }
 
-  private getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+  public setRole(role: string): void { // Definición del método setRole()
+    localStorage.setItem(this.roleKey, role);
   }
 
   logout(): void {

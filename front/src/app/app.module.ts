@@ -18,6 +18,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { RouterModule } from '@angular/router';
 import { ReservasComponent } from './pages/perfil-usuario/reservas/reservas.component';
+import { PagosComponent } from './pages/pagos/pagos.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { ReservasComponent } from './pages/perfil-usuario/reservas/reservas.comp
     ContactoComponent,
     FooterComponent,
     CarrouselComponent,
-    ReservasComponent
+    ReservasComponent,
+    PagosComponent
   ],
   imports: [
     BrowserModule,

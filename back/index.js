@@ -38,7 +38,7 @@ app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use(express.json());
 
 app.use("/experiencias", experienciasRouter);
-app.use("/reservas", reservasRouter);
+app.use("/myreservas", reservasRouter);
 app.use("/valoraciones", valoracionesRouter);
 app.use("/users", userRouter);
 

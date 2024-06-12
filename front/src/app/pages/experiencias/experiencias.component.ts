@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { Experiencia } from 'src/app/models/experiencia.model';
 import { LocalLeisureService } from './../../services/local-leisure.service';
 import { Component, OnInit } from '@angular/core';
@@ -16,29 +17,26 @@ export class ExperienciasComponent implements OnInit {
   precioMinFiltro: number = 0;
   precioMaxFiltro: number = Infinity;
 
-  constructor(private localLeisureService: LocalLeisureService){
+  constructor(private localLeisureService: LocalLeisureService, public authService: AuthService) {}
 
+  ngOnInit() {
+    this.localLeisureService.getExperiencias().subscribe(
+      (response: any) => {
+        this.experienciaList = response;
+        this.experienciaList.push();
+      },
+      error => {
+        console.error('Error al obtener las experiencias:', error);
+      }
+    );
   }
 
-  ngOnInit(){
-    this.localLeisureService.getExperiencias().subscribe((response: any)=>{
-    this.experienciaList = response
-   this.experienciaList.push()
-    },
-    error => {
-      console.error('Error al obtener las experiencias:', error);
-    }
-  );
-      }
-
   aplicarFiltros() {
-    
     if (this.ciudadFiltro) {
       this.experienciaList = this.experienciaList.filter(experiencia =>
         experiencia.ubicacion.includes(this.ciudadFiltro)
       );
     }
-
 
     if (this.temaFiltro) {
       this.experienciaList = this.experienciaList.filter(experiencia =>
@@ -46,18 +44,16 @@ export class ExperienciasComponent implements OnInit {
       );
     }
 
-  
-if (!isNaN(this.precioMinFiltro)) {
-  this.experienciaList = this.experienciaList.filter(experiencia =>
-    parseFloat(experiencia.precio) >= this.precioMinFiltro
-  );
-}
+    if (!isNaN(this.precioMinFiltro)) {
+      this.experienciaList = this.experienciaList.filter(experiencia =>
+        parseFloat(experiencia.precio) >= this.precioMinFiltro
+      );
+    }
 
-
-if (!isNaN(this.precioMaxFiltro)) {
-  this.experienciaList = this.experienciaList.filter(experiencia =>
-    parseFloat(experiencia.precio) <= this.precioMaxFiltro
-  );
-}
+    if (!isNaN(this.precioMaxFiltro)) {
+      this.experienciaList = this.experienciaList.filter(experiencia =>
+        parseFloat(experiencia.precio) <= this.precioMaxFiltro
+      );
+    }
   }
 }

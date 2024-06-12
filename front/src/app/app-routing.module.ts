@@ -10,10 +10,16 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { ExperienciasAnfitrionComponent } from './pages/perfil-usuario/experiencias-anfitrion/experiencias-anfitrion.component';
 import { TokenGuard } from './guards/token.guard';
 import { HomeComponent } from './components/home/home.component';
+import { PagosComponent } from './pages/pagos/pagos.component';
 
 const routes: Routes = [
 {
   path: "", component: HomeComponent
+},
+{
+  path: 'pagos/:id',
+  component: PagosComponent,
+  canActivate: [TokenGuard] 
 },
 {
   path: "comofunciona", component: ComoFuncionaComponent
