@@ -1,14 +1,12 @@
-<li>
-  <h4>{{ experiencia.titulo }}</h4>
-  <img src="{{ experiencia.imagenes }}" alt="{{ experiencia.titulo }}" />
-  <p>{{ experiencia.descripcion }}</p>
-  <p>{{ experiencia.categoria }}</p>
-  <p>{{ experiencia.precio }}</p>
-  <p>{{ experiencia.ubicacion }}</p>
-  <p>{{ experiencia.duracion }}</p>
-  <p>{{ experiencia.valoraciones }}</p>
-  <!-- <button (click)="deleteLibro()">Eliminar</button>
-  <button (click)="editLibro(libro)">Editar</button> -->
-  <button (click)="goBack()">Volver atrás</button>
-
+<li class="experiencia-item">
+  <h4 class="experiencia-titulo">{{ experiencia.titulo }}</h4>
+  <img class="experiencia-imagen" src="{{ experiencia.imagenes }}" alt="{{ experiencia.titulo }}" />
+  <p class="experiencia-descripcion">{{ experiencia.descripcion }}</p>
+  <p class="experiencia-categoria">Tipo de experiencia: {{ experiencia.categoria }}</p>
+  <p class="experiencia-precio">Precio en moneda local: {{ experiencia.precio }}</p>
+  <p class="experiencia-ubicacion">Destino: {{ experiencia.ubicacion }}</p>
+  <p class="experiencia-duracion">Duracion de la experiencia: {{ experiencia.duracion }}</p>
+  <p class="experiencia-valoraciones">{{ experiencia.valoraciones }}</p>
+  <button class="experiencia-boton" (click)="goBack()">Volver atrás</button>
 </li>
+
