@@ -20,6 +20,9 @@ import { RouterModule } from '@angular/router';
 import { ReservasComponent } from './pages/perfil-usuario/reservas/reservas.component';
 import { PagosComponent } from './pages/pagos/pagos.component';
 import { PagosFormComponent } from './components/pagos-form/pagos-form.component';
+import { ExperienciasAnfitrionComponent } from './pages/perfil-usuario/experiencias-anfitrion/experiencias-anfitrion.component';
+
+
 
 
 @NgModule({
@@ -39,7 +42,9 @@ import { PagosFormComponent } from './components/pagos-form/pagos-form.component
     CarrouselComponent,
     ReservasComponent,
     PagosComponent,
-    PagosFormComponent
+    PagosFormComponent,
+    ExperienciasAnfitrionComponent
+   
   ],
   imports: [
     BrowserModule,
