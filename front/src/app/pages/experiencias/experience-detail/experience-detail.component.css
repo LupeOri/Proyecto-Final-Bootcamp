@@ -1,0 +1,140 @@
+.experiencia-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .experiencia-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    color: #3ca795;
+  }
+  
+  .experiencia-imagen {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+  
+  .experiencia-descripcion,
+  .experiencia-categoria,
+  .experiencia-precio,
+  .experiencia-ubicacion,
+  .experiencia-duracion,
+  .experiencia-valoraciones {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    text-align: center;
+    color: #333;
+  }
+  
+  .experiencia-descripcion {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2faa96;
+  }
+  
+  .experiencia-boton {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #2faa96;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .experiencia-boton:hover {
+    background-color: #20685c;
+  }
+  
+  /* Media Queries for responsiveness */
+  @media (max-width: 1200px) {
+    .experiencia-titulo {
+      font-size: 1.4rem;
+    }
+  
+    .experiencia-imagen {
+      height: 180px;
+    }
+  
+    .experiencia-descripcion,
+    .experiencia-categoria,
+    .experiencia-precio,
+    .experiencia-ubicacion,
+    .experiencia-duracion,
+    .experiencia-valoraciones {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .experiencia-titulo {
+      font-size: 1.3rem;
+    }
+  
+    .experiencia-imagen {
+      height: 160px;
+    }
+  
+    .experiencia-descripcion,
+    .experiencia-categoria,
+    .experiencia-precio,
+    .experiencia-ubicacion,
+    .experiencia-duracion,
+    .experiencia-valoraciones {
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .experiencia-titulo {
+      font-size: 1.2rem;
+    }
+  
+    .experiencia-imagen {
+      height: 140px;
+    }
+  
+    .experiencia-descripcion,
+    .experiencia-categoria,
+    .experiencia-precio,
+    .experiencia-ubicacion,
+    .experiencia-duracion,
+    .experiencia-valoraciones {
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .experiencia-titulo {
+      font-size: 1.1rem;
+    }
+  
+    .experiencia-imagen {
+      height: 120px;
+    }
+  
+    .experiencia-descripcion,
+    .experiencia-categoria,
+    .experiencia-precio,
+    .experiencia-ubicacion,
+    .experiencia-duracion,
+    .experiencia-valoraciones {
+      font-size: 0.8rem;
+    }
+  
+    .experiencia-boton {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  }
+   

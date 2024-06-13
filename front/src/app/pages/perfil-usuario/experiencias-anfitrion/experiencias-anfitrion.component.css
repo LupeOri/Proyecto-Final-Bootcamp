@@ -1,2 +1,125 @@
-
+.filtro-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-bottom: 1rem;
+  }
+  
+  .filtro-container label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .filtro-container input,
+  .filtro-container select {
+    padding: 0.7rem; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    background-color: #e9f5f3;
+  }
+  
+  .filtro-container button {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #2faa96;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .filtro-container button:hover {
+    background-color: #20685c;
+  }
+  
+  .experiencia-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .experiencia-card {
+    width: 300px;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  .experiencia-imagen {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  .experiencia-details {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .experiencia-titulo {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .experiencia-ubicacion {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .experiencia-description {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    align-self: flex-end;
+  }
+  
+  .card-footer p {
+    margin: 0;
+  }
+  
+  .precio {
+    font-size: 1.2rem;
+  }
+  
+  .duracion {
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background-color: #2faa96;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  button:hover {
+    background-color: #20685c;
+  }
+  
+  .ng-template button {
+    background-color: #ff6f61; 
+  }
+  
+  
   

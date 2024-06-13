@@ -32,12 +32,12 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: auto; /* Mueve el pie de la tarjeta hacia abajo */
-  align-self: flex-end; /* Alinea el pie de la tarjeta al final de la tarjeta */
+  margin-top: auto; 
+  align-self: flex-end; 
 }
 
 .card-footer button {
-  margin-top: 0.5rem; /* Ajusta el espacio entre botones */
+  margin-top: 0.5rem;
 }
 
 .precio {
@@ -66,5 +66,5 @@ button:hover {
 .experiencia-titulo {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
-  text-align: center; /* Centra el título */
+  text-align: center; 
 }
