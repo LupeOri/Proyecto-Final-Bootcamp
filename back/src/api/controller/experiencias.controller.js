@@ -4,7 +4,7 @@ const getExperiencias = async (req, res) => {
     const allExperiencias = await Experiencia.find()
       .populate("users")
       .populate("valoraciones");
-    console.log(allExperiencias[0]._id);
+    // console.log(allExperiencias[0]._id);
     return res.status(200).json(allExperiencias);
   } catch (error) {
     console.log(error);
@@ -27,6 +27,8 @@ const getExperienciaById = async (req, res) => {
 const postExperiencia = async (req, res) => {
   try {
     const newExperiencia = new Experiencia(req.body);
+    console.log(req.body);
+    console.log(newExperiencia);
     const createdExperiencia = await newExperiencia.save();
     // .populate("usuario");
 

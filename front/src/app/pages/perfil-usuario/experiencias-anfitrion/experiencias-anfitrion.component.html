@@ -1,28 +1,62 @@
 <form [formGroup]="experienciasForm" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="titulo" placeholder="Introduce un título para tu experiencia" />
-    <input type="text" formControlName="descripcion" placeholder="Descripción de la experiencia" />
-    <input type="text" formControlName="precio" placeholder="Introduce el precio y tipo de moneda" />
-    <input type="text" formControlName="imagenes" placeholder="Introduce la URL de imagen" />
-    <input type="text" formControlName="ubicacion" placeholder="Introduce la ubicación (ciudad, País)" />
-    <button [disabled]="!experienciasForm.valid" type="submit">Crear Experiencia</button>
-  </form> 
-  
-  <li>
-    <div class="experiencia-container">
-      <img [src]="nuevaExperiencia.imagenes" [alt]="nuevaExperiencia.titulo" class="experiencia-imagen" />
-      <div class="experiencia-details">
-        <h2 class="experiencia-titulo">{{ nuevaExperiencia.titulo }}</h2>
-        <p class="experiencia-ubicacion">{{ nuevaExperiencia.ubicacion }}</p>
-        <p class="experiencia-description">{{ nuevaExperiencia.descripcion }}</p>
-        <div class="card-footer">
-          <p class="precio">{{ nuevaExperiencia.precio }}</p>
-          <div class="duracion">
-            <p>Duración: {{ nuevaExperiencia.duracion }}</p>
-          </div>
+  <input
+    type="text"
+    formControlName="titulo"
+    placeholder="Introduce un título para tu experiencia"
+  />
+  <input
+    type="text"
+    formControlName="categoria"
+    placeholder="Introduce una categoría para tu experiencia"
+  />
+  <input
+    type="text"
+    formControlName="descripcion"
+    placeholder="Descripción de la experiencia"
+  />
+  <input
+    type="text"
+    formControlName="precio"
+    placeholder="Introduce el precio y tipo de moneda"
+  />
+  <input
+    type="text"
+    formControlName="imagenes"
+    placeholder="Introduce la URL de imagen"
+  />
+  <input
+    type="text"
+    formControlName="ubicacion"
+    placeholder="Introduce la ubicación (ciudad, País)"
+  />
+  <input
+    type="text"
+    formControlName="duracion"
+    placeholder="Introduce la duración de la experiencia"
+  />
+  <button [disabled]="!experienciasForm.valid" type="submit">
+    Crear Experiencia
+  </button>
+</form>
+
+<li>
+  <div class="experiencia-container">
+    <img
+      [src]="nuevaExperiencia.imagenes"
+      [alt]="nuevaExperiencia.titulo"
+      class="experiencia-imagen"
+    />
+    <div class="experiencia-details">
+      <h2 class="experiencia-titulo">{{ nuevaExperiencia.titulo }}</h2>
+      <p class="experiencia-ubicacion">{{ nuevaExperiencia.ubicacion }}</p>
+      <p class="experiencia-categoria">{{ nuevaExperiencia.categoria }}</p>
+      <p class="experiencia-description">{{ nuevaExperiencia.descripcion }}</p>
+      <div class="card-footer">
+        <p class="precio">{{ nuevaExperiencia.precio }}</p>
+        <div class="duracion">
+          <p>Duración: {{ nuevaExperiencia.duracion }}</p>
         </div>
       </div>
     </div>
-  </li>
-  
-
-  
+  </div>
+</li>

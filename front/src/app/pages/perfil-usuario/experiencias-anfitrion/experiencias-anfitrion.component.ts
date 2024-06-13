@@ -21,7 +21,7 @@ export class ExperienciasAnfitrionComponent implements OnInit{
     precio: '',
     duracion: '',
     categoria: 'otras categorias',
-    usuario: { id: '', tipo: 'anfitrion', nombre: '', email: '', password: '' }, // Usuario por defecto
+    usuario: { _id: '', tipo: 'anfitrion', nombre: '', email: '', password: '' }, // Usuario por defecto
     valoraciones: [],
     imagenes: '',
     nombre: ''
@@ -41,16 +41,16 @@ export class ExperienciasAnfitrionComponent implements OnInit{
       precio: ['', Validators.required],
       duracion: ['', Validators.required],
       categoria: ['', Validators.required],
-      usuario: this.formBuilder.group({
-        id: [''],
-        tipo: ['anfitrion'],
-        nombre: [''],
-        email: [''],
-        password: ['']
-      }),
-      valoraciones: [''],
+      // usuario: this.formBuilder.group({
+      //   _id: [''],
+      //   tipo: ['anfitrion'],
+      //   nombre: [''],
+      //   email: [''],
+      //   password: ['']
+      // }),
+      // valoraciones: [''],
       imagenes: ['', Validators.required],
-      nombre: ['']
+      // nombre: ['']
     });
 
     this.experienciasForm.valueChanges.subscribe((changes) => {
@@ -61,10 +61,16 @@ export class ExperienciasAnfitrionComponent implements OnInit{
   onSubmit() {
     if (this.experienciasForm.valid) {
       const newExperiencia = this.experienciasForm.value;
-      this.experienciaService.postExperiencia(newExperiencia).subscribe(() => {
-        alert('Experiencia creada');
-        this.router.navigate(['/experiencias']);
-      });
+      this.experienciaService.postExperiencia(newExperiencia).subscribe(
+        (response: any) => {
+          alert('Experiencia creada');
+          this.router.navigate(['/experiencias']);
+        },
+        error => {
+          console.error('Error al obtener las experiencias:', error);
+        }
+        
+      );
     }
   }
 }

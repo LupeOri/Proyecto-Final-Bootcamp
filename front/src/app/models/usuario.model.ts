@@ -3,7 +3,7 @@ import { Valoracion } from './valoracion.model';
 
 
 export interface Usuario {
-    id: string;
+    _id: string;
     tipo: 'invitado' | 'anfitrion';
     // tipo: string;
     nombre: string;

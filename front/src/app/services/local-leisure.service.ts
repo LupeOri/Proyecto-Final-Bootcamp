@@ -28,6 +28,6 @@ export class LocalLeisureService {
   }
 
   postExperiencia(newExperiencia: Experiencia) {
-    return this.http.post(`${this.baseUrl}experiencias`, newExperiencia);
+    return this.http.post(`${this.baseUrl}experiencias/experiencias`, newExperiencia);
   }
 }
