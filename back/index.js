@@ -45,13 +45,6 @@ app.use("/users", userRouter);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-// Ruta para manejar el envío del formulario
-// app.post("/contacto", (req, res) => {
-//   const { name, email, message } = req.body;
-//   console.log(`Nombre: ${name}, Email: ${email}, Mensaje: ${message}`);
-//   res.status(200).send("Mensaje recibido");
-// });
-
 app.use("/", (req, res) => {
   res.json("Este es el home");
 });

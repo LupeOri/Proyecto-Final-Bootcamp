@@ -19,7 +19,7 @@ export class ReservasComponent implements OnInit {
         (response: any) => {
           if (Array.isArray(response)) {
             this.reservaList = response
-              .filter(reserva => reserva.estado === 'confirmada') // Filtre les réservations par statut "confirmada"
+              .filter(reserva => reserva.estado === 'confirmada') // Filtré las rersevaciones por statut "confirmada"
               .map(reserva => ({
                 id: reserva._id,
                 experiencia: reserva.experiencia,
