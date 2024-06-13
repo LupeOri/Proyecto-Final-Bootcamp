@@ -26,25 +26,25 @@
       </div>
       <div class="form-group">
         <label for="fecha">Fecha de caducidad</label>
-        <textarea
+        <input
           id="fecha"
           formControlName="fecha"
-          type="date"
+          type="text"
           required
           class="form-control"
           placeholder="MM/AA"
-        ></textarea>
+        />
       </div>
       <div class="form-group">
         <label for="codigo">Código de seguridad</label>
         <textarea
-          id="codigo"
-          formControlName="codigo"
-          type="number"
-          required
-          class="form-control"
-          placeholder="Introduzca los 3 digitos de su tarjeta"
-        ></textarea>
+        id="codigo"
+        formControlName="codigo"
+        type="number"
+        required
+        class="form-control"
+        placeholder="Introduzca los 3 digitos de su tarjeta"
+      ></textarea>
       </div>
       <button type="submit" class="submit-button">Pagar</button>
     </form>
