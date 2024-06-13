@@ -36,18 +36,5 @@
     margin-bottom: 0.5rem;
   }
   
-  /* Botón */
-  button {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    color: #fff;
-    background-color: #2faa96;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #20685c;
-  }
+
   
