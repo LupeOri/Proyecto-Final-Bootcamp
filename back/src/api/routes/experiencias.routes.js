@@ -13,7 +13,7 @@ const { isAuth } = require("../middleware/auth.middleware");
 
 experienciasRouter.get("/", getExperiencias);
 experienciasRouter.get("/:id", getExperienciaById);
-experienciasRouter.post("/experiencias", [isAuth], postExperiencia);
+experienciasRouter.post("/", [isAuth], postExperiencia);
 experienciasRouter.put("/:id", [isAuth], putExperiencia);
 experienciasRouter.delete("/:id", [isAuth], deleteExperiencia);
 
